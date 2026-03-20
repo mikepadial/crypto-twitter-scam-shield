@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+<img src="https://lh3.googleusercontent.com/M4uQN2xTiN1X6Z-nHiCuxvbgZkd-9cMVzUXWhkDFO2p6yhV-K82Ej8pnQMsGrWQhHgxfO5A9P17uAlsgshtbY07H27Q=s1280-w1280-h800" alt="example" width="500">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+Install extension - https://chromewebstore.google.com/detail/crypto-twitter-scam-shiel/jncnooeffigcacclopoekhabeocbhbij?hl=en-GB&utm_source=ext_sidebar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+A Chrome extension that protects users from **typosquatting attacks** and potential financial loss.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Real-time Account Verification**: Automatically highlights account names as you scroll through social media
+  - 🔴 Red highlighting for accounts the you do not follow
+  - 🟢 Green highlighting for accounts that you follow
+   
 
-- Configure the top-level `parserOptions` property like this:
+## Architecture
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Frontend**: Chrome extension built with React, Typescript, Vite and TailwindCSS. CSS is injected into the DOM on scroll to highlight account names red or green.
+- **Backend**: AWS Lambda serverless function and API gateway that abstracts the Twitter API used to fetch the list of accounts the user follows.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Examples of typosquatting
+
+https://www.publish0x.com/spamreports/beware-of-twitterx-gold-verified-scams-xmjmnrn
+
+
+<img src="https://cdn.publish0x.com/prod/fs/cachedimages/4046878907-38fd983dc06948ef2aa24beaf75462b03ee1489bb4e5732c07378d2ffbdf10a4.webp" alt="example" width="700">
